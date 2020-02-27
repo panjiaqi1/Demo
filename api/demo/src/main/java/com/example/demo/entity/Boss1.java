@@ -1,23 +1,22 @@
 package com.example.demo.entity;
 
-import java.util.List;
 import javax.persistence.*;
+import java.util.List;
 
 /**
- * 老板实体
+ * 老板实体（Boss1对应Staff1）
  * 一个老板对应多个员工
  */
 @Entity
-public class Boss {
+public class Boss1 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String name;
 
-    @OneToMany(mappedBy = "boss", fetch=FetchType.EAGER,
-            cascade = {CascadeType.PERSIST, CascadeType.MERGE,CascadeType.REFRESH, CascadeType.REMOVE})
-    private List<Staff> staffList;
+    @OneToMany(mappedBy = "boss1")
+    private List<Staff1> staff1sList;
 
     public Long getId() {
         return id;
@@ -35,14 +34,14 @@ public class Boss {
         this.name = name;
     }
 
-    public List<Staff> getStaffList() {
-        return staffList;
+    public List<Staff1> getStaff1sList() {
+        return staff1sList;
     }
 
-    public void setStaffList(List<Staff> staffList) {
-        this.staffList = staffList;
+    public void setStaff1sList(List<Staff1> staff1sList) {
+        this.staff1sList = staff1sList;
     }
 
-    public Boss() {
+    public Boss1() {
     }
 }
