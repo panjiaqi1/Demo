@@ -2,7 +2,7 @@ spring:
 # hibernate 数据库 验证级别
   jpa:
     hibernate:
-      ddl-auto: validate
+      ddl-auto: update
     show-sql: true
 # 配置数据源
   datasource:
